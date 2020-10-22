@@ -1,0 +1,24 @@
+  
+#!/bin/bash
+
+# GISTIC2.0 copy number calling v0.23
+# Markers file not requires for v0.23+
+# seg file must not have overlaps within the same sample, Num_markers column can have any scores - not required (?)
+
+
+GISTICTDIR=[]
+OUTDIR=[]
+REFGENE=[]
+
+mkdir -p "${OUTDIR1}"
+SEGFILE=[]
+
+cd "${GISTICTDIR}"
+mkdir -p "${OUTDIR}"
+
+/scratch/DDS/SDDS/BIOINFCO/eholt/softwares/tem/./gistic2  \
+-refgene "${REFGENE}" \
+-b "${OUTDIR}" \
+-seg "${SEGFILE}" \
+-savegene 1 \
+-genegistic 1
